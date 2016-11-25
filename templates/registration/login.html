@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+{% load static %}
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static "css/sample.css" %}" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <title>FAMILY CONNECTION TREE|
+        {% block title %}{% endblock %}
+    </title>
+    <style type="text/css">
+        .jumbotron{
+            background:rgba(255,255,255,0.5);
+            position: fixed;
+            top: 30%;
+            padding: 5%;
+            left: 40%;
+            margin-top: -50px;
+            margin-left: -100px;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse  navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Family Connection Tree</a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="/accounts/login/"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+  </div>
+</nav>
+<br><br><br>
+
+<div class="jumbotron">
+    {% if form.errors %}
+        <p>Your username and password didn't match. Please try again.</p>
+    {% endif %}
+    <form class="form-horizontal" role="form" method="post" action=".">{% csrf_token %}
+    <div class="form-group">
+        <label for="id_username">USERNAME                  :</label>{{form.username }}
+    </div>
+        <div class="form-group">
+            <label for="id_password">PASSWORD              :</label>{{form.password }}
+        </div>
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-primary" value="Login">LOGIN</button>
+                    <input type="hidden" name="next" value="/home" />
+        </div>
+        <br><br><br>
+    <div  class="col-sm-offset-2 col-sm-10">
+      <a href="/register" class="btn btn-info" role="button">Register</a>
+    </div>
+    </form>
+    </div>
+</body>

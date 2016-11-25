@@ -1,0 +1,29 @@
+{% extends 'base1.html' %}
+{% block head %}Detailed..<style>
+    .line{
+	    height:1px;
+	    background-color:#24404c;
+	    border-bottom:1px solid #416371;
+	    margin:1em 0;
+	    overflow:hidden;
+    }
+.post{
+           background:rgba(255,255,255,0.5);
+            padding: 1%;
+            font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
+
+}
+</style>
+{% endblock %}
+
+{% block content %}
+    <div class="post">
+        {% if post.published_date %}
+            <div class="date">
+                {{ post.published_date }}
+            </div>
+        {% endif %}
+        <h1>{{ post.title }}</h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endblock %}

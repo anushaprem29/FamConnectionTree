@@ -1,0 +1,46 @@
+{% extends "base1.html" %}
+{% block title %}CONTACT{% endblock %}
+{% block head %}Contact Information of the family "{{ family_name }}"
+<style>
+    #single_contact{
+        background-color: antiquewhite;
+    }
+    .img-rounded{
+        width: 3cm;
+        height: 4cm;
+    }
+
+    .btn-success{
+        width: 100%;
+    }
+    .line{
+	    height:1px;
+	    background-color:#24404c;
+	    border-bottom:1px solid #416371;
+	    margin:1em 0;
+	    overflow:hidden;
+    }
+
+</style>
+{% endblock %}
+{% block content %}
+<div class="content container">
+    <div class="row">
+        <div class="col-md-8" style="display: table">
+            {% for member in family_members %}
+                <div style="display: table-row">
+                    <div style="display: table-cell">
+                          <img class="img-rounded" src="{{ member.picture.url }}"/>
+                    </div>
+                    <div id="single_contact" style="display: table-cell">
+                        <h3> Name: {{ member.name }}</h3>
+                        <h3>Phone: {{ member.phone }}</h3>
+                    </div>
+                    <a href="/message/new/" class="btn btn-success">Contact {{ member.name }}!</a>
+                </div>
+                <div class="line"></div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends "base1.html" %}
+{% block title %}About{% endblock %}
+
+{% block head %}About Family Connection Tree
+<style>
+    #auth_and_pro,#Facts_info,#Memories_info,#news_info,#contact_info{
+        padding:15%;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+    <pre><h4>            Family Connection Tree is a private, easy-to –use website where you can connect with your friends and family.</h4></pre>
+    <h3>This is how it happened...</h3>
+    <h4><ul><br><li>At first it was going to just be a way to list relationships like spouse, and kids. 
+        <br><br><li>But that wasn’t good enough, because it wouldn’t link the users together, and wouldn’t add much value
+        <br><br><li>Then  decided to just do a full blown genealogy system it was overkill, and would take more time do.
+    </ul>
+    </h4>
+    <br>
+    <h3>This is what you will get...</h3>
+    <h4><ul><br><li> It is a hybrid approach. 
+        <br><br><li>A very lightweight genealogy system, that you could view the relationship list form on your profile.
+        <br><br><li>This system include many things like and  this will be used more for showing relationships.
+    </ul>
+    </h4>
+    <br>
+    <div class="container">
+      <h2>Modules..</h2>
+  <div class="list-group">
+    <a href="#auth_and_pro" class="list-group-item active">Authentication and Profile</a>
+    <a href="#contact_info" class="list-group-item">Contact Book</a>
+    <a href="#news_info" class="list-group-item active">News</a>
+    <a href="#Memories_info" class="list-group-item">Memories</a>
+    <a href="#Facts_info" class="list-group-item active">Facts</a>
+  </div>
+</div>
+    <h4 id="auth_and_pro">
+    Authentication and Profile : Every user wil have their own login portal. They are given to signup if already not a user. They have to update their profile an include information such as
+      Email,Phone number, Profile picture, Date of birth etc
+    </h4>
+
+    <h4 id="contact_info">
+    Contact : A user can view all the contact information such as email and phone numbers of their family members.
+    </h4>
+
+    <h4 id="news_info">
+    News : Here, the user gets to see all the exciting news ad upcoming events of their families. Create a new News post by clicking add new .
+    </h4>
+
+    <h4 id="Memories_info">
+    Memories : All the memories like trips, birthdays and anniversary is all available here. Create a new memory post by clicking add new .
+    </h4>
+
+    <h4 id="Facts_info">
+    Facts : All the facts and trivias about the family is visible here. Create a new Fact post by clicking add new.
+    </h4>
+{% endblock %}

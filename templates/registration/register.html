@@ -1,0 +1,29 @@
+<style>
+    .form-horizontal{
+          position: fixed;
+            top: 30%;
+            left: 40%;
+            margin-top: -50px;
+            margin-left: -100px;
+            padding: 2%;
+            background:rgba(255,255,255,0.5);
+
+    }
+    .btn{
+        position: fixed;
+        left: 45%;
+        width: 100px;
+    }
+</style>
+{% extends "base.html" %}
+{% block title %}User Registration{% endblock %}
+{% block head %}Welcome! Enter your details :){% endblock %}
+{% block content %}
+    <form class="form-horizontal" method="post" action=".">{% csrf_token %}
+        <table class="table-striped table-bordered table-hover table-condensed">
+            {{ form.as_table }}
+        </table>
+        <br>
+        <input class="btn btn-info" type="submit" value="Register" />
+    </form>
+{% endblock %}

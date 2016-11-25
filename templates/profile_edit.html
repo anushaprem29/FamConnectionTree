@@ -1,0 +1,24 @@
+{% extends 'base1.html' %}
+{% block head %}Update your profile!
+{% endblock %}
+{% block content %}
+    <style>
+        table{
+            margin-left: auto;
+            margin-right: auto;
+        }
+    .btn-success{
+        width: 20%;
+        height:16%;
+        clear:both;
+    }
+    </style>
+    <form method="POST" class="post-form" enctype="multipart/form-data">{% csrf_token %}
+        <table class="table-striped table-bordered table-hover table-condensed">
+        {{ form.as_table}}
+        </table>
+        <a href="/family_new/" class="btn btn-success">New Family Name</a>
+        <button type="submit" class="save btn btn-success">Save</button>
+    </form>
+
+{% endblock %}
